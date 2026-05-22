@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Dynamic Dumbbell — İçine su, kum veya talaş doldurularak ağırlığı ayarlanabilen, katlanabilir, çevre dostu yenilikçi dambıl sistemi. Şimdi ön sipariş verin.">
+    <meta name="keywords"
+        content="dynamic dumbbell, taşınabilir dambıl, katlanabilir dambıl, sürdürülebilir fitness, akıllı ağırlık, ön sipariş">
+    <meta name="author" content="Dynamic Dumbbell Team">
+    <title>Dynamic Dumbbell — Sınırları Kaldır, Karbon Ayak İzini Azalt</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/Dumbbell.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- ═══════════════ NAVIGATION ═══════════════ -->
+    <nav id="main-nav" class="navbar">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo" id="nav-logo">
+                <span class="logo-icon">◆</span>
+                <span class="logo-text">Dynamic<span class="logo-accent">Dumbbell</span></span>
+            </a>
+            <div class="nav-links" id="nav-links">
+                <a href="#hero" class="nav-link">Anasayfa</a>
+                <a href="#product-detail" class="nav-link">Ürün Detayı</a>
+                <a href="#features" class="nav-link">Özellikler</a>
+                <a href="#how-it-works" class="nav-link">Nasıl Çalışır</a>
+                <a href="#footer" class="nav-link">İletişim</a>
+            </div>
+            <button class="nav-cta" id="nav-cta-preorder" type="button">Ön Sipariş Ver</button>
+            <button class="nav-hamburger" id="nav-hamburger" aria-label="Menüyü Aç">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ═══════════════ HERO SECTION ═══════════════ -->
+    <section id="hero" class="hero-section">
+        <div class="hero-bg-glow"></div>
+        <div class="hero-grid-overlay"></div>
+
+        <div class="hero-inner">
+            <div class="hero-content" id="hero-content">
+                <div class="hero-badge" id="hero-badge">
+                    <span class="badge-dot"></span>
+                    <span>2026 — Yenilikçi Fitness Çözümü</span>
+                </div>
+                <h1 class="hero-title" id="hero-title">
+                    Dynamic<br>
+                    <span class="title-accent">Dumbbell</span><span class="title-dot">.</span>
+                </h1>
+                <p class="hero-slogan" id="hero-slogan">
+                    <span class="slogan-gradient">Sınırları Kaldır, Karbon Ayak İzini Azalt.</span>
+                </p>
+                <p class="hero-desc" id="hero-desc">
+                    Su, kum veya talaş ile saniyeler içinde 4kg'dan 24kg'a kadar ayarlanabilen,
+                    katlanabilir polimer yapısıyla seyahatte ve evde yer kaplamayan yeni nesil dambıl sistemi.
+                </p>
+                <div class="hero-ctas" id="hero-ctas">
+                    <button type="button" class="btn btn-primary" id="cta-preorder-hero">
+                        <span class="btn-glow"></span>
+                        <span class="btn-text">Ön Sipariş Oluştur</span>
+                        <svg class="btn-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                    <a href="#product-detail" class="btn btn-secondary" id="cta-mechanism">
+                        <span class="btn-text">Ürünü İncele</span>
+                        <svg class="btn-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M12 8v8M8 12h8" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="hero-stats" id="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-value" data-count="4">4</span>
+                        <span class="stat-label">Yıllık Uzmanlık</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-value">%87</span>
+                        <span class="stat-label">Karbon Tasarrufu</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-value">4-24<small>kg</small></span>
+                        <span class="stat-label">Ağırlık Aralığı</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-image-wrap" id="hero-image-wrap">
+                <div class="hero-image-frame">
+                    <img src="images/Dumbbell.png" alt="Dynamic Dumbbell — Yenilikçi katlanabilir dambıl"
+                        class="hero-product-img" id="hero-product-img" loading="eager" fetchpriority="high">
+                    <div class="image-shine"></div>
+                </div>
+                <div class="hero-image-badge">
+                    <span class="pulse-ring"></span>
+                    <span>4-24 KG</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-scroll-indicator" id="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>Aşağı Kaydır</span>
+        </div>
+    </section>
+
+    <!-- ═══════════════ PRODUCT DETAIL SECTION ═══════════════ -->
+    <section id="product-detail" class="product-detail-section">
+        <div class="section-header" id="detail-header">
+            <span class="section-tag">Ürün Detayı</span>
+            <h2 class="section-title">İçini Gör, <span class="title-accent">Farkı Anla</span></h2>
+            <p class="section-subtitle">Dynamic Dumbbell'in patentli mekanizmasını keşfedin. Her parça mükemmellik için
+                tasarlandı.</p>
+        </div>
+
+        <div class="product-detail-inner">
+            <div class="product-detail-image" id="product-detail-image">
+                <div class="detail-image-frame">
+                    <img src="images/Gemini_Generated_Image_1uyebf1uyebf1uye.png"
+                        alt="Dynamic Dumbbell patentli mekanizma detayı — iç yapı ve parçalar"
+                        class="detail-img" loading="lazy">
+                    <div class="image-shine"></div>
+                </div>
+            </div>
+
+            <div class="product-detail-info" id="product-detail-info">
+                <div class="detail-spec-card">
+                    <div class="spec-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
+                        </svg>
+                    </div>
+                    <div class="spec-content">
+                        <h3>Sızdırmaz Mühür</h3>
+                        <p>Çift katmanlı silikon contalar ile mutlak sızdırmazlık. Su, kum veya talaş fark etmez.</p>
+                    </div>
+                </div>
+                <div class="detail-spec-card">
+                    <div class="spec-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <rect x="2" y="7" width="20" height="14" rx="2" />
+                            <path d="M16 7V5a4 4 0 0 0-8 0v2" />
+                        </svg>
+                    </div>
+                    <div class="spec-content">
+                        <h3>Katlanabilir Yapı</h3>
+                        <p>Boşken sadece ~200g ağırlığıyla bavulunuza, sırt çantanıza sığar. Seyahatin yeni
+                            partneri.</p>
+                    </div>
+                </div>
+                <div class="detail-spec-card">
+                    <div class="spec-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M12 6v6l4 2" />
+                        </svg>
+                    </div>
+                    <div class="spec-content">
+                        <h3>Dayanıklı Polimer</h3>
+                        <p>Endüstriyel sınıf özel polimer yapısı ile 10.000+ kullanım döngüsü garantisi.</p>
+                    </div>
+                </div>
+                <div class="detail-spec-card">
+                    <div class="spec-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
+                            <path d="M2 12h20" />
+                            <path
+                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                        </svg>
+                    </div>
+                    <div class="spec-content">
+                        <h3>%87 Karbon Tasarrufu</h3>
+                        <p>Boş kargolama ile geleneksel dambıllere kıyasla karbon ayak izini ciddi oranda azaltır.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ WEIGHT SIMULATOR ═══════════════ -->
+    <section id="simulator" class="simulator-section">
+        <div class="section-header" id="sim-header">
+            <span class="section-tag">İnteraktif Deneyim</span>
+            <h2 class="section-title">Ağırlık <span class="title-accent">Simülatörü</span></h2>
+            <p class="section-subtitle">Slider'ı kaydırarak istediğiniz ağırlığı seçin ve dolgu malzemesine göre detayları inceleyin.</p>
+        </div>
+
+        <div class="simulator-inner">
+            <div class="simulator-visual" id="simulator-visual">
+                <div class="sim-product-frame">
+                    <img src="images/Dumbbell.png" alt="Dynamic Dumbbell simülatör görünümü"
+                        class="sim-product-img" id="sim-product-img" loading="lazy">
+                    <div class="sim-weight-overlay" id="sim-weight-overlay">
+                        <span class="sim-weight-big" id="sim-weight-big">4</span>
+                        <span class="sim-weight-unit">KG</span>
+                    </div>
+                    <div class="sim-fill-indicator" id="sim-fill-indicator"></div>
+                </div>
+            </div>
+
+            <div class="simulator-controls" id="sim-controls">
+                <div class="weight-display" id="weight-display">
+                    <span class="weight-number" id="weight-number">4</span>
+                    <span class="weight-unit">KG</span>
+                </div>
+
+                <div class="slider-container" id="slider-container">
+                    <div class="slider-track">
+                        <div class="slider-fill" id="slider-fill"></div>
+                        <input type="range" min="4" max="24" value="4" step="1" class="slider-input" id="weight-slider"
+                            aria-label="Ağırlık Seçici">
+                    </div>
+                    <div class="slider-labels">
+                        <span>4 KG</span>
+                        <span>8 KG</span>
+                        <span>12 KG</span>
+                        <span>16 KG</span>
+                        <span>20 KG</span>
+                        <span>24 KG</span>
+                    </div>
+                </div>
+
+                <div class="fill-type-selector" id="fill-type">
+                    <span class="fill-label">Dolgu Malzemesi:</span>
+                    <div class="fill-options">
+                        <button class="fill-option active" data-fill="water" id="fill-water" type="button">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
+                            </svg>
+                            <span>Su</span>
+                        </button>
+                        <button class="fill-option" data-fill="sand" id="fill-sand" type="button">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <circle cx="12" cy="12" r="3" />
+                                <circle cx="6" cy="18" r="2" />
+                                <circle cx="18" cy="18" r="2" />
+                                <circle cx="12" cy="6" r="2" />
+                            </svg>
+                            <span>Kum</span>
+                        </button>
+                        <button class="fill-option" data-fill="sawdust" id="fill-sawdust" type="button">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07" />
+                            </svg>
+                            <span>Talaş</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="weight-info-cards" id="weight-info">
+                    <div class="info-card">
+                        <span class="info-icon">📦</span>
+                        <span class="info-label">Kargo Ağırlığı</span>
+                        <span class="info-value" id="shipping-weight">~200g</span>
+                    </div>
+                    <div class="info-card">
+                        <span class="info-icon">🌱</span>
+                        <span class="info-label">CO₂ Tasarrufu</span>
+                        <span class="info-value" id="co2-saving">~3.2 kg</span>
+                    </div>
+                    <div class="info-card">
+                        <span class="info-icon">💧</span>
+                        <span class="info-label">Dolgu Miktarı</span>
+                        <span class="info-value" id="fill-amount">~3.8 L</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ FEATURES / VALUE PROPS ═══════════════ -->
+    <section id="features" class="features-section">
+        <div class="section-header" id="feat-header">
+            <span class="section-tag">Neden Dynamic Dumbbell?</span>
+            <h2 class="section-title">Değer <span class="title-accent">Önerimiz</span></h2>
+            <p class="section-subtitle">Fitness'ı yeniden tanımlayan üç temel özellik.</p>
+        </div>
+
+        <div class="features-grid" id="features-grid">
+            <!-- Card 1 -->
+            <div class="feature-card" id="feature-card-1">
+                <div class="card-glow"></div>
+                <div class="card-number">01</div>
+                <div class="card-icon-wrap">
+                    <svg class="card-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                        <polyline points="9 22 9 12 15 12 15 22" />
+                    </svg>
+                </div>
+                <h3 class="card-title">Her Yerde Seninle</h3>
+                <p class="card-desc">Katlanabilir özel polimer yapısı sayesinde boşken birkaç yüz gram. Bavulunuzda,
+                    sırt çantanızda — kampta, otelde, nerede olursanız olun yanınızda.</p>
+                <div class="card-tag">Taşınabilirlik</div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="feature-card" id="feature-card-2">
+                <div class="card-glow"></div>
+                <div class="card-number">02</div>
+                <div class="card-icon-wrap">
+                    <svg class="card-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.2">
+                        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
+                    </svg>
+                </div>
+                <h3 class="card-title">Akıllı Akışkan Mekanizması</h3>
+                <p class="card-desc">Su, kum veya talaş — istediğiniz dolgu malzemesiyle saniyeler içinde 4kg'dan 24kg'a
+                    kadar ağırlığı özelleştirin. Sızdırmaz mühür teknolojisi.</p>
+                <div class="card-tag">Özelleştirme</div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="feature-card" id="feature-card-3">
+                <div class="card-glow"></div>
+                <div class="card-number">03</div>
+                <div class="card-icon-wrap">
+                    <svg class="card-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.2">
+                        <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
+                        <path d="M12 6v6l4 2" />
+                    </svg>
+                </div>
+                <h3 class="card-title">Sürdürülebilir Gelecek</h3>
+                <p class="card-desc">Boş sevkiyat sayesinde karbon ayak izini %87'e kadar azaltır. Yeşil tüketim
+                    bilincine sahip kullanıcılar için tasarlandı.</p>
+                <div class="card-tag">Sürdürülebilirlik</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ HOW IT WORKS ═══════════════ -->
+    <section id="how-it-works" class="how-section">
+        <div class="section-header" id="how-header">
+            <span class="section-tag">Basit Kullanım</span>
+            <h2 class="section-title">Nasıl <span class="title-accent">Çalışır?</span></h2>
+        </div>
+
+        <div class="how-steps" id="how-steps">
+            <div class="how-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Aç &amp; Katla</h3>
+                    <p>Özel polimer yapıyı bavulunuzdan çıkarın ve dambıl formuna açın.</p>
+                </div>
+            </div>
+            <div class="how-connector"></div>
+            <div class="how-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Doldur</h3>
+                    <p>İstediğiniz ağırlığa ulaşana dek su, kum veya talaş ile doldurun.</p>
+                </div>
+            </div>
+            <div class="how-connector"></div>
+            <div class="how-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Antrenman Yap</h3>
+                    <p>Sızdırmaz mühürü kapatın ve antrenmanınıza başlayın. Bu kadar basit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ CTA SECTION ═══════════════ -->
+    <section id="cta-section" class="cta-section">
+        <div class="cta-bg-glow"></div>
+        <div class="cta-inner">
+            <div class="cta-content" id="cta-content">
+                <span class="section-tag">Sınırlı Sayıda</span>
+                <h2 class="cta-title">Fitness'ın Geleceğine<br><span class="title-accent">Şimdi Sahip Olun</span></h2>
+                <p class="cta-desc">İlk üretim partisine özel erken kuş fiyatıyla ön sipariş verin. Stoklarla sınırlıdır.</p>
+                <button type="button" class="btn btn-primary btn-large" id="cta-preorder-bottom">
+                    <span class="btn-glow"></span>
+                    <span class="btn-text">Ön Sipariş Oluştur</span>
+                    <svg class="btn-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+            <div class="cta-image-wrap">
+                <img src="images/hero-lifestyle.png" alt="Dynamic Dumbbell premium stüdyo fotoğrafı"
+                    class="cta-lifestyle-img" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer id="footer" class="footer-section">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#" class="nav-logo footer-logo">
+                        <span class="logo-icon">◆</span>
+                        <span class="logo-text">Dynamic<span class="logo-accent">Dumbbell</span></span>
+                    </a>
+                    <p class="footer-tagline">Fitness'ın geleceğini taşıyın.<br>Her yere, kolayca.</p>
+                </div>
+
+                <div class="footer-newsletter">
+                    <h3>Gelişmelerden Haberdar Olun</h3>
+                    <p>Lansman tarihi ve erken kuş fırsatları için bültenimize abone olun.</p>
+                    <form class="newsletter-form" id="newsletter-form">
+                        <div class="newsletter-input-wrap">
+                            <input type="email" placeholder="E-posta adresiniz" class="newsletter-input"
+                                id="newsletter-email" required aria-label="E-posta">
+                            <button type="submit" class="newsletter-btn" id="newsletter-btn">
+                                <span>Abone Ol</span>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-links">
+                    <a href="#hero">Anasayfa</a>
+                    <a href="#product-detail">Ürün Detayı</a>
+                    <a href="#features">Özellikler</a>
+                    <a href="#how-it-works">Nasıl Çalışır</a>
+                </div>
+                <div class="footer-socials">
+                    <a href="#" class="social-link" aria-label="Instagram" id="social-instagram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <rect x="2" y="2" width="20" height="20" rx="5" />
+                            <circle cx="12" cy="12" r="5" />
+                            <circle cx="17.5" cy="6.5" r="1.5" />
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter / X" id="social-twitter">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M4 4l11.733 16H20L8.267 4z" />
+                            <path d="M4 20l6.768-6.768M20 4l-6.768 6.768" />
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn" id="social-linkedin">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
+                            <rect x="2" y="9" width="4" height="12" />
+                            <circle cx="4" cy="4" r="2" />
+                        </svg>
+                    </a>
+                </div>
+                <p class="footer-copy">&copy; 2026 Dynamic Dumbbell. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ═══════════════ PRE-ORDER MODAL (Native <dialog>) ═══════════════ -->
+    <dialog id="preorder-modal" class="preorder-dialog" aria-labelledby="modal-title" closedby="any">
+        <div class="modal-container">
+            <button type="button" class="modal-close" id="modal-close" aria-label="Kapat">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6L6 18M6 6l12 12" />
+                </svg>
+            </button>
+
+            <div class="modal-header">
+                <div class="modal-icon-wrap">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                        <line x1="3" y1="6" x2="21" y2="6" />
+                        <path d="M16 10a4 4 0 0 1-8 0" />
+                    </svg>
+                </div>
+                <h2 id="modal-title" class="modal-title">Ön Sipariş Oluştur</h2>
+                <p class="modal-subtitle">Bilgilerinizi girin, sizi ilk haberdar edenlerden olalım.</p>
+            </div>
+
+            <form id="preorder-form" class="modal-form" novalidate>
+                <div class="form-group">
+                    <label for="preorder-firstname" class="form-label">İsim</label>
+                    <input type="text" id="preorder-firstname" class="form-input" placeholder="Adınız"
+                        required minlength="2" autocomplete="given-name">
+                    <span class="form-error" id="error-firstname"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="preorder-lastname" class="form-label">Soyisim</label>
+                    <input type="text" id="preorder-lastname" class="form-input" placeholder="Soyadınız"
+                        required minlength="2" autocomplete="family-name">
+                    <span class="form-error" id="error-lastname"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="preorder-email" class="form-label">E-posta Adresi</label>
+                    <input type="email" id="preorder-email" class="form-input" placeholder="ornek@email.com"
+                        required autocomplete="email">
+                    <span class="form-error" id="error-email"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-submit" id="preorder-submit">
+                    <span class="btn-glow"></span>
+                    <span class="btn-text">Siparişi Tamamla</span>
+                    <svg class="btn-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </form>
+
+            <!-- Success State (hidden by default) -->
+            <div class="modal-success" id="modal-success" hidden>
+                <div class="success-checkmark">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                        <polyline points="22 4 12 14.01 9 11.01" />
+                    </svg>
+                </div>
+                <h3 class="success-title">Ön Siparişiniz Alındı!</h3>
+                <p class="success-desc">Teşekkürler! E-posta adresinize onay mesajı gönderilecektir. İlk üretim
+                    partisinde sizi bilgilendireceğiz.</p>
+                <button type="button" class="btn btn-secondary" id="modal-success-close">
+                    <span class="btn-text">Tamam</span>
+                </button>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- ═══════════════ TOAST NOTIFICATION ═══════════════ -->
+    <div class="toast-container" id="toast-container" role="status" aria-live="polite"></div>
+
+    <!-- Main Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>
