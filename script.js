@@ -66,9 +66,9 @@
 
     // Fill type images (v=2 cache bust for updated images)
     const fillImages = {
-        water: 'images/Su-Dolgulu-Dumbbell-Simülasyonu.png?v=2',
-        sand: 'images/Kum-Dolgulu-Dambıl-Simülasyonu.png?v=2',
-        stone: 'images/Taş-Dolgulu-Dambıl-Simülasyonu.png?v=2'
+        water: 'images/su.png?v=2',
+        sand: 'images/kum.png?v=2',
+        stone: 'images/tas.png?v=2'
     };
 
     let currentFillType = 'water';
@@ -119,7 +119,7 @@
                 simProductImg.src = fillImages[currentFillType];
                 simProductImg.alt = currentFillType === 'water' ? 'Su Dolgulu Dumbbell Simülasyonu'
                     : currentFillType === 'sand' ? 'Kum Dolgulu Dambıl Simülasyonu'
-                    : 'Taş Dolgulu Dambıl Simülasyonu';
+                        : 'Taş Dolgulu Dambıl Simülasyonu';
             }
             updateWeightUI(weightSlider ? weightSlider.value : 4);
         });
@@ -298,34 +298,35 @@
                 submitBtn.innerHTML = '<span class="btn-text">Gönderiliyor...</span><span class="btn-spinner"></span>';
             }
 
-            fetch('http://localhost:3000/api/preorder', {
+            // Eski localhost satırını Render linkinle değiştiriyorsun:
+            fetch('https://dynamicdumbbell.onrender.com/api/preorder', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
             })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    showSuccess();
-                    showToast('Ön siparişiniz alındı! Onay e-postası gönderildi. 🎉', 'success');
-                } else {
-                    showToast(data.message || 'Bir hata oluştu. Lütfen tekrar deneyin.', 'error');
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        showSuccess();
+                        showToast('Ön siparişiniz alındı! Onay e-postası gönderildi. 🎉', 'success');
+                    } else {
+                        showToast(data.message || 'Bir hata oluştu. Lütfen tekrar deneyin.', 'error');
+                        // Butonu geri getir
+                        if (submitBtn) {
+                            submitBtn.disabled = false;
+                            submitBtn.innerHTML = originalBtnHTML;
+                        }
+                    }
+                })
+                .catch(error => {
+                    console.error('[DD] Ön sipariş hatası:', error);
+                    showToast('Sunucuya ulaşılamadı. Lütfen tekrar deneyin.', 'error');
                     // Butonu geri getir
                     if (submitBtn) {
                         submitBtn.disabled = false;
                         submitBtn.innerHTML = originalBtnHTML;
                     }
-                }
-            })
-            .catch(error => {
-                console.error('[DD] Ön sipariş hatası:', error);
-                showToast('Sunucuya ulaşılamadı. Lütfen tekrar deneyin.', 'error');
-                // Butonu geri getir
-                if (submitBtn) {
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = originalBtnHTML;
-                }
-            });
+                });
         });
     }
 
