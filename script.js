@@ -66,9 +66,9 @@
 
     // Fill type images (v=2 cache bust for updated images)
     const fillImages = {
-        water: 'images/Su Dolgulu Dumbbell Simülasyonu.png?v=2',
-        sand: 'images/Kum Dolgulu Dambıl Simülasyonu.png?v=2',
-        stone: 'images/Taş Dolgulu Dambıl Simülasyonu.png?v=2'
+        water: 'images/Su-Dolgulu-Dumbbell-Simülasyonu.png?v=2',
+        sand: 'images/Kum-Dolgulu-Dambıl-Simülasyonu.png?v=2',
+        stone: 'images/Taş-Dolgulu-Dambıl-Simülasyonu.png?v=2'
     };
 
     let currentFillType = 'water';
