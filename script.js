@@ -61,7 +61,14 @@
     const fillColors = {
         water: { bg: 'rgba(34, 211, 238, 0.3)', indicator: '#22d3ee' },
         sand: { bg: 'rgba(245, 158, 11, 0.3)', indicator: '#f59e0b' },
-        sawdust: { bg: 'rgba(132, 204, 22, 0.3)', indicator: '#84cc16' }
+        stone: { bg: 'rgba(156, 163, 175, 0.3)', indicator: '#9ca3af' }
+    };
+
+    // Fill type images (v=2 cache bust for updated images)
+    const fillImages = {
+        water: 'images/Su Dolgulu Dumbbell Simülasyonu.png?v=2',
+        sand: 'images/Kum Dolgulu Dambıl Simülasyonu.png?v=2',
+        stone: 'images/Taş Dolgulu Dambıl Simülasyonu.png?v=2'
     };
 
     let currentFillType = 'water';
@@ -74,11 +81,7 @@
         const percent = ((weight - 4) / 20) * 100;
         if (sliderFill) sliderFill.style.width = percent + '%';
 
-        // Animate the product image with a subtle scale based on weight
-        if (simProductImg) {
-            const scale = 1 + (percent / 100) * 0.08;
-            simProductImg.style.transform = `scale(${scale})`;
-        }
+        // Image stays fixed — no scale effect on weight change
 
         // Fill indicator in the simulator visual
         if (simFillIndicator) {
@@ -95,7 +98,8 @@
         const activeFill = document.querySelector('.fill-option.active');
         const ft = activeFill ? activeFill.dataset.fill : 'water';
         const base = weight - 0.2;
-        const vol = ft === 'water' ? base : ft === 'sand' ? base / 1.6 : base / 0.6;
+        // Density: water=1 kg/L, sand=1.6 kg/L, stone=2.5 kg/L
+        const vol = ft === 'water' ? base : ft === 'sand' ? base / 1.6 : base / 2.5;
         if (fillAmount) fillAmount.textContent = `~${vol.toFixed(1)} L`;
     }
 
@@ -110,6 +114,13 @@
             document.querySelectorAll('.fill-option').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             currentFillType = btn.dataset.fill;
+            // Switch simulator image based on fill type
+            if (simProductImg && fillImages[currentFillType]) {
+                simProductImg.src = fillImages[currentFillType];
+                simProductImg.alt = currentFillType === 'water' ? 'Su Dolgulu Dumbbell Simülasyonu'
+                    : currentFillType === 'sand' ? 'Kum Dolgulu Dambıl Simülasyonu'
+                    : 'Taş Dolgulu Dambıl Simülasyonu';
+            }
             updateWeightUI(weightSlider ? weightSlider.value : 4);
         });
     });
@@ -277,41 +288,17 @@
                 email: fields.email.el.value.trim()
             };
 
-            // ─────────────────────────────────────────────────
-            // BACKEND ENTEGRASYONU — E-posta Gönderimi
-            // ─────────────────────────────────────────────────
-            // Aşağıdaki fetch isteği, ön sipariş verilerini backend'e
-            // gönderir. Backend'de bir API endpoint oluşturmanız gerekmektedir.
-            //
-            // Örnek API: POST /api/preorder
-            // Beklenen body: { firstName, lastName, email }
-            //
-            // Node.js/Express örneği:
-            //   app.post('/api/preorder', async (req, res) => {
-            //     const { firstName, lastName, email } = req.body;
-            //     // Nodemailer, SendGrid, Mailgun vb. ile e-posta gönder:
-            //     // await transporter.sendMail({
-            //     //   to: email,
-            //     //   subject: 'Dynamic Dumbbell — Ön Siparişiniz Alındı!',
-            //     //   html: `<h1>Merhaba ${firstName},</h1><p>Ön siparişiniz başarıyla oluşturuldu.</p>`
-            //     // });
-            //     // Veritabanına kaydet (MongoDB, PostgreSQL, vb.)
-            //     res.json({ success: true });
-            //   });
-            //
-            // PHP Webhook örneği:
-            //   <?php
-            //   $data = json_decode(file_get_contents('php://input'), true);
-            //   $to = $data['email'];
-            //   $subject = 'Dynamic Dumbbell — Ön Siparişiniz Alındı!';
-            //   $message = "Merhaba {$data['firstName']},\n\nÖn siparişiniz başarıyla alınmıştır.";
-            //   mail($to, $subject, $message);
-            //   echo json_encode(['success' => true]);
-            //   ?>
-            // ─────────────────────────────────────────────────
+            // ── Backend'e ön sipariş verisi gönder ──
+            const submitBtn = document.getElementById('preorder-submit');
+            const originalBtnHTML = submitBtn ? submitBtn.innerHTML : '';
 
-            /*
-            fetch('/api/preorder', {
+            // Butonu loading durumuna al
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<span class="btn-text">Gönderiliyor...</span><span class="btn-spinner"></span>';
+            }
+
+            fetch('http://localhost:3000/api/preorder', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
@@ -320,21 +307,25 @@
             .then(data => {
                 if (data.success) {
                     showSuccess();
-                    showToast('Ön siparişiniz başarıyla kaydedildi!', 'success');
+                    showToast('Ön siparişiniz alındı! Onay e-postası gönderildi. 🎉', 'success');
                 } else {
-                    showToast('Bir hata oluştu. Lütfen tekrar deneyin.', 'error');
+                    showToast(data.message || 'Bir hata oluştu. Lütfen tekrar deneyin.', 'error');
+                    // Butonu geri getir
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalBtnHTML;
+                    }
                 }
             })
             .catch(error => {
-                console.error('Ön sipariş hatası:', error);
+                console.error('[DD] Ön sipariş hatası:', error);
                 showToast('Sunucuya ulaşılamadı. Lütfen tekrar deneyin.', 'error');
+                // Butonu geri getir
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnHTML;
+                }
             });
-            */
-
-            // ── Geçici: Backend olmadan başarı simülasyonu ──
-            console.log('[DD] Ön sipariş verisi:', formData);
-            showSuccess();
-            showToast('Ön siparişiniz başarıyla kaydedildi! 🎉', 'success');
         });
     }
 

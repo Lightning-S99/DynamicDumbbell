@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Dynamic Dumbbell — İçine su, kum veya talaş doldurularak ağırlığı ayarlanabilen, katlanabilir, çevre dostu yenilikçi dambıl sistemi. Şimdi ön sipariş verin.">
+        content="Dynamic Dumbbell — İçine su, kum veya taş doldurularak ağırlığı ayarlanabilen, katlanabilir, çevre dostu yenilikçi dambıl sistemi. Şimdi ön sipariş verin.">
     <meta name="keywords"
         content="dynamic dumbbell, taşınabilir dambıl, katlanabilir dambıl, sürdürülebilir fitness, akıllı ağırlık, ön sipariş">
     <meta name="author" content="Dynamic Dumbbell Team">
@@ -36,6 +36,7 @@
             <div class="nav-links" id="nav-links">
                 <a href="#hero" class="nav-link">Anasayfa</a>
                 <a href="#product-detail" class="nav-link">Ürün Detayı</a>
+                <a href="#simulator" class="nav-link">Ağırlık Simülatörü</a>
                 <a href="#features" class="nav-link">Özellikler</a>
                 <a href="#how-it-works" class="nav-link">Nasıl Çalışır</a>
                 <a href="#footer" class="nav-link">İletişim</a>
@@ -66,7 +67,7 @@
                     <span class="slogan-gradient">Sınırları Kaldır, Karbon Ayak İzini Azalt.</span>
                 </p>
                 <p class="hero-desc" id="hero-desc">
-                    Su, kum veya talaş ile saniyeler içinde 4kg'dan 24kg'a kadar ayarlanabilen,
+                    Su, kum veya taş ile saniyeler içinde 4kg'dan 24kg'a kadar ayarlanabilen,
                     katlanabilir polimer yapısıyla seyahatte ve evde yer kaplamayan yeni nesil dambıl sistemi.
                 </p>
                 <div class="hero-ctas" id="hero-ctas">
@@ -78,12 +79,13 @@
                             <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
                     </button>
-                    <a href="#product-detail" class="btn btn-secondary" id="cta-mechanism">
-                        <span class="btn-text">Ürünü İncele</span>
+
+                    <a href="#simulator" class="btn btn-simulator" id="cta-simulator">
+                        <span class="btn-text">Ağırlık Simülatörü</span>
                         <svg class="btn-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2">
+                            <path d="M12 2v20M2 12h20" />
                             <circle cx="12" cy="12" r="10" />
-                            <path d="M12 8v8M8 12h8" />
                         </svg>
                     </a>
                 </div>
@@ -107,7 +109,7 @@
 
             <div class="hero-image-wrap" id="hero-image-wrap">
                 <div class="hero-image-frame">
-                    <img src="images/Dumbbell.png" alt="Dynamic Dumbbell — Yenilikçi katlanabilir dambıl"
+                    <img src="images/hero.png" alt="Dynamic Dumbbell — Yenilikçi katlanabilir dambıl"
                         class="hero-product-img" id="hero-product-img" loading="eager" fetchpriority="high">
                     <div class="image-shine"></div>
                 </div>
@@ -134,16 +136,8 @@
         </div>
 
         <div class="product-detail-inner">
-            <div class="product-detail-image" id="product-detail-image">
-                <div class="detail-image-frame">
-                    <img src="images/Gemini_Generated_Image_1uyebf1uyebf1uye.png"
-                        alt="Dynamic Dumbbell patentli mekanizma detayı — iç yapı ve parçalar"
-                        class="detail-img" loading="lazy">
-                    <div class="image-shine"></div>
-                </div>
-            </div>
-
-            <div class="product-detail-info" id="product-detail-info">
+            <!-- Sol taraf: 2 kart -->
+            <div class="detail-specs-left" id="detail-specs-left">
                 <div class="detail-spec-card">
                     <div class="spec-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -153,7 +147,7 @@
                     </div>
                     <div class="spec-content">
                         <h3>Sızdırmaz Mühür</h3>
-                        <p>Çift katmanlı silikon contalar ile mutlak sızdırmazlık. Su, kum veya talaş fark etmez.</p>
+                        <p>Çift katmanlı silikon contalar ile mutlak sızdırmazlık. Su, kum veya taş fark etmez.</p>
                     </div>
                 </div>
                 <div class="detail-spec-card">
@@ -170,6 +164,20 @@
                             partneri.</p>
                     </div>
                 </div>
+            </div>
+
+            <!-- Orta: Görsel -->
+            <div class="product-detail-image" id="product-detail-image">
+                <div class="detail-image-frame">
+                    <img src="images/Urun Detay V2.png"
+                        alt="Dynamic Dumbbell patentli mekanizma detayı — iç yapı ve parçalar" class="detail-img"
+                        loading="lazy">
+                    <div class="image-shine"></div>
+                </div>
+            </div>
+
+            <!-- Sağ taraf: 2 kart -->
+            <div class="detail-specs-right" id="detail-specs-right">
                 <div class="detail-spec-card">
                     <div class="spec-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -207,13 +215,14 @@
         <div class="section-header" id="sim-header">
             <span class="section-tag">İnteraktif Deneyim</span>
             <h2 class="section-title">Ağırlık <span class="title-accent">Simülatörü</span></h2>
-            <p class="section-subtitle">Slider'ı kaydırarak istediğiniz ağırlığı seçin ve dolgu malzemesine göre detayları inceleyin.</p>
+            <p class="section-subtitle">Slider'ı kaydırarak istediğiniz ağırlığı seçin ve dolgu malzemesine göre
+                detayları inceleyin.</p>
         </div>
 
         <div class="simulator-inner">
             <div class="simulator-visual" id="simulator-visual">
                 <div class="sim-product-frame">
-                    <img src="images/Dumbbell.png" alt="Dynamic Dumbbell simülatör görünümü"
+                    <img src="images/Su Dolgulu Dumbbell Simülasyonu.png?v=2" alt="Su Dolgulu Dumbbell Simülasyonu"
                         class="sim-product-img" id="sim-product-img" loading="lazy">
                     <div class="sim-weight-overlay" id="sim-weight-overlay">
                         <span class="sim-weight-big" id="sim-weight-big">4</span>
@@ -265,12 +274,13 @@
                             </svg>
                             <span>Kum</span>
                         </button>
-                        <button class="fill-option" data-fill="sawdust" id="fill-sawdust" type="button">
+                        <button class="fill-option" data-fill="stone" id="fill-stone" type="button">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="1.5">
-                                <path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07" />
+                                <path d="M18.364 5.636a9 9 0 0 1-12.728 12.728L12 12l6.364-6.364z" />
+                                <path d="M5.636 5.636L12 12l-6.364 6.364" />
                             </svg>
-                            <span>Talaş</span>
+                            <span>Taş</span>
                         </button>
                     </div>
                 </div>
@@ -333,7 +343,7 @@
                     </svg>
                 </div>
                 <h3 class="card-title">Akıllı Akışkan Mekanizması</h3>
-                <p class="card-desc">Su, kum veya talaş — istediğiniz dolgu malzemesiyle saniyeler içinde 4kg'dan 24kg'a
+                <p class="card-desc">Su, kum veya taş — istediğiniz dolgu malzemesiyle saniyeler içinde 4kg'dan 24kg'a
                     kadar ağırlığı özelleştirin. Sızdırmaz mühür teknolojisi.</p>
                 <div class="card-tag">Özelleştirme</div>
             </div>
@@ -377,7 +387,7 @@
                 <div class="step-number">2</div>
                 <div class="step-content">
                     <h3>Doldur</h3>
-                    <p>İstediğiniz ağırlığa ulaşana dek su, kum veya talaş ile doldurun.</p>
+                    <p>İstediğiniz ağırlığa ulaşana dek su, kum veya taş ile doldurun.</p>
                 </div>
             </div>
             <div class="how-connector"></div>
@@ -398,18 +408,19 @@
             <div class="cta-content" id="cta-content">
                 <span class="section-tag">Sınırlı Sayıda</span>
                 <h2 class="cta-title">Fitness'ın Geleceğine<br><span class="title-accent">Şimdi Sahip Olun</span></h2>
-                <p class="cta-desc">İlk üretim partisine özel erken kuş fiyatıyla ön sipariş verin. Stoklarla sınırlıdır.</p>
+                <p class="cta-desc">İlk üretim partisine özel erken kuş fiyatıyla ön sipariş verin. Stoklarla
+                    sınırlıdır.</p>
                 <button type="button" class="btn btn-primary btn-large" id="cta-preorder-bottom">
                     <span class="btn-glow"></span>
                     <span class="btn-text">Ön Sipariş Oluştur</span>
-                    <svg class="btn-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2">
+                    <svg class="btn-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
                         <path d="M5 12h14M12 5l7 7-7 7" />
                     </svg>
                 </button>
             </div>
             <div class="cta-image-wrap">
-                <img src="images/hero-lifestyle.png" alt="Dynamic Dumbbell premium stüdyo fotoğrafı"
+                <img src="images/Web site en alt.png" alt="Dynamic Dumbbell premium stüdyo fotoğrafı"
                     class="cta-lifestyle-img" loading="lazy">
             </div>
         </div>
@@ -494,7 +505,8 @@
 
             <div class="modal-header">
                 <div class="modal-icon-wrap">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5">
                         <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
                         <line x1="3" y1="6" x2="21" y2="6" />
                         <path d="M16 10a4 4 0 0 1-8 0" />
@@ -507,30 +519,30 @@
             <form id="preorder-form" class="modal-form" novalidate>
                 <div class="form-group">
                     <label for="preorder-firstname" class="form-label">İsim</label>
-                    <input type="text" id="preorder-firstname" class="form-input" placeholder="Adınız"
-                        required minlength="2" autocomplete="given-name">
+                    <input type="text" id="preorder-firstname" class="form-input" placeholder="Adınız" required
+                        minlength="2" autocomplete="given-name">
                     <span class="form-error" id="error-firstname"></span>
                 </div>
 
                 <div class="form-group">
                     <label for="preorder-lastname" class="form-label">Soyisim</label>
-                    <input type="text" id="preorder-lastname" class="form-input" placeholder="Soyadınız"
-                        required minlength="2" autocomplete="family-name">
+                    <input type="text" id="preorder-lastname" class="form-input" placeholder="Soyadınız" required
+                        minlength="2" autocomplete="family-name">
                     <span class="form-error" id="error-lastname"></span>
                 </div>
 
                 <div class="form-group">
                     <label for="preorder-email" class="form-label">E-posta Adresi</label>
-                    <input type="email" id="preorder-email" class="form-input" placeholder="ornek@email.com"
-                        required autocomplete="email">
+                    <input type="email" id="preorder-email" class="form-input" placeholder="ornek@email.com" required
+                        autocomplete="email">
                     <span class="form-error" id="error-email"></span>
                 </div>
 
                 <button type="submit" class="btn btn-primary btn-submit" id="preorder-submit">
                     <span class="btn-glow"></span>
                     <span class="btn-text">Siparişi Tamamla</span>
-                    <svg class="btn-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2">
+                    <svg class="btn-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
                         <path d="M5 12h14M12 5l7 7-7 7" />
                     </svg>
                 </button>
