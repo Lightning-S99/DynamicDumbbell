@@ -64,11 +64,11 @@
         stone: { bg: 'rgba(156, 163, 175, 0.3)', indicator: '#9ca3af' }
     };
 
-    // Fill type images (v=2 cache bust for updated images)
+    // Fill type images (v=3 cache bust for updated images)
     const fillImages = {
-        water: 'images/su.png?v=2',
-        sand: 'images/kum.png?v=2',
-        stone: 'images/tas.png?v=2'
+        water: 'images/su.png?v=3',
+        sand: 'images/kum.png?v=3',
+        stone: 'images/tas.png?v=3'
     };
 
     let currentFillType = 'water';
@@ -308,7 +308,7 @@
                 .then(data => {
                     if (data.success) {
                         showSuccess();
-                        showToast('Ön siparişiniz alındı! Onay e-postası gönderildi. 🎉', 'success');
+                        showToast('Ön siparişiniz alındı! 🎉', 'success');
                     } else {
                         showToast(data.message || 'Bir hata oluştu. Lütfen tekrar deneyin.', 'error');
                         // Butonu geri getir
