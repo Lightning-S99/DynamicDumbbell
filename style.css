@@ -314,7 +314,7 @@ input {
 
 .hero-title {
     font-family: var(--font-display);
-    font-size: clamp(3.2rem, 6.5vw, 6.5rem);
+    font-size: clamp(2.5rem, 8vw, 6.5rem);
     font-weight: 800;
     line-height: 0.95;
     letter-spacing: -0.04em;
@@ -1930,5 +1930,22 @@ input {
         right: 10px;
         padding: 8px 14px;
         font-size: 0.8rem;
+    }
+
+    .modal-container {
+        padding: 24px 16px;
+    }
+
+    .newsletter-input-wrap {
+        flex-direction: column;
+        border-radius: var(--radius-md);
+    }
+
+    .newsletter-btn {
+        justify-content: center;
+    }
+
+    .newsletter-input {
+        text-align: center;
     }
 }
