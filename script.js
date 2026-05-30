@@ -298,8 +298,8 @@
                 submitBtn.innerHTML = '<span class="btn-text">Gönderiliyor...</span><span class="btn-spinner"></span>';
             }
 
-            // Eski localhost satırını Render linkinle değiştiriyorsun:
-            fetch('https://dynamicdumbbell.onrender.com/api/preorder', {
+            // Gönderilecek URL'yi göreceli hale getiriyoruz (Hem lokal hem sunucu için çalışır)
+            fetch('/api/preorder', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)

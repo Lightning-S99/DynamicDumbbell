@@ -1396,6 +1396,7 @@ input {
 .preorder-dialog {
     border: none;
     padding: 0;
+    margin: auto;
     max-width: 500px;
     width: calc(100% - 40px);
     background: transparent;

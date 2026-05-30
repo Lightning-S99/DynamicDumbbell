@@ -49,13 +49,16 @@ app.post('/api/preorder', async (req, res) => {
             });
         }
 
-        // Başarılı yanıt dön (Mail gönderme iptal edildi)
-        console.log(`✅ Ön sipariş alındı (E-posta gönderilmedi): ${firstName} ${lastName} - ${email}`);
+        // Sadece arayüz (UI) simülasyonu için başarılı yanıt dön (Mail gönderme iptal edildi)
+        console.log(`✅ Ön sipariş alındı (Sadece UI Testi - Mail gönderilmedi): ${firstName} ${lastName} - ${email}`);
 
-        res.json({
-            success: true,
-            message: 'Ön sipariş başarıyla oluşturuldu.',
-        });
+        // İşlemin başarıyla tamamlandığını simüle etmek için kısa bir gecikme eklenebilir
+        setTimeout(() => {
+            res.json({
+                success: true,
+                message: 'Ön sipariş başarıyla oluşturuldu.',
+            });
+        }, 500);
 
     } catch (error) {
         console.error('❌ Sipariş hatası:', error);
