@@ -53,6 +53,7 @@
     const shippingWeight = document.getElementById('shipping-weight');
     const co2Saving = document.getElementById('co2-saving');
     const fillAmount = document.getElementById('fill-amount');
+    const fillIcon = document.getElementById('fill-icon');
     const simWeightBig = document.getElementById('sim-weight-big');
     const simProductImg = document.getElementById('sim-product-img');
     const simFillIndicator = document.getElementById('sim-fill-indicator');
@@ -92,7 +93,7 @@
         }
 
         // Update info cards
-        if (shippingWeight) shippingWeight.textContent = '~200g';
+        if (shippingWeight) shippingWeight.textContent = '1000 gr';
         if (co2Saving) co2Saving.textContent = `~${(weight * 0.38).toFixed(1)} kg`;
 
         const activeFill = document.querySelector('.fill-option.active');
@@ -101,6 +102,7 @@
         // Density: water=1 kg/L, sand=1.6 kg/L, stone=2.5 kg/L
         const vol = ft === 'water' ? base : ft === 'sand' ? base / 1.6 : base / 2.5;
         if (fillAmount) fillAmount.textContent = `~${vol.toFixed(1)} L`;
+        if (fillIcon) fillIcon.textContent = ft === 'water' ? '💧' : ft === 'sand' ? '🏜️' : '🪨';
     }
 
     if (weightSlider) {
